@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio ของบัว (บงกชชมพู โสภะ) - Student Game Creator</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10288C',
+                        secondary: '#AEDB67',
+                        bgCustom: '#EAF6AD',
+                        accentPink: '#E2B4BD',
+                        darkText: '#111827'
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Prompt', 'Poppins', sans-serif;
+            background-color: #EAF6AD;
+            color: #111827;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(16, 40, 140, 0.1), 0 8px 10px -6px rgba(16, 40, 140, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-bgCustom min-h-screen flex flex-col selection:bg-secondary selection:text-primary">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-secondary/40 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Minimal Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-primary text-secondary flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+                    พ
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-primary">Portfolio</span>
+                    <span class="block text-xs text-gray-500 font-medium">By บัว ม.5</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-gray-700">
+                <a href="#about" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">About Me</a>
+                <a href="#games" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">My Games</a>
+                <a href="#contact" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:block">
+                <a href="#games" class="px-5 py-2.5 rounded-full bg-primary text-white font-medium shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad text-secondary"></i>
+                    <span>Play My Games</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-primary hover:bg-gray-100 transition-colors">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 space-y-3 shadow-lg">
+            <a href="#about" class="block py-2 text-gray-700 font-medium hover:text-primary">About Me</a>
+            <a href="#games" class="block py-2 text-gray-700 font-medium hover:text-primary">My Games</a>
+            <a href="#contact" class="block py-2 text-gray-700 font-medium hover:text-primary">Contact</a>
+            <div class="pt-2">
+                <a href="#games" class="w-full text-center block px-5 py-2.5 rounded-xl bg-primary text-white font-medium shadow">
+                    Play My Games
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow">
+        
+        <!-- Split Hero (About Me) -->
+        <section id="about" class="py-12 lg:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Side: Profile Intro & Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accentPink/60 text-primary font-medium text-sm shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        นักเรียนชั้น ม.5 ผู้สร้างสรรค์เกมสุดน่ารัก
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-tight">
+                        สวัสดีค่ะ, ฉันชื่อ <span class="text-emerald-700 underline decoration-secondary decoration-wavy underline-offset-8">บงกชชมพู (บัว)</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed font-normal">
+                        ยินดีต้อนรับสู่พอร์ตโฟลิโอของฉัน! นี่คือผลงานเกมสนุกๆ ที่สร้างขึ้นจากการเรียนรู้ในช่วงเช้า ออกแบบด้วยความตั้งใจ ผสมผสานความคิดสร้างสรรค์เพื่อให้ทุกคนได้สนุกและเรียนรู้ไปพร้อมกัน เป้าหมายในอนาคตของฉันคือการมี <span class="font-semibold text-primary bg-secondary/40 px-2 py-0.5 rounded">"ชีวิตสบาย"</span> และมีความสุขกับสิ่งที่ทำค่ะ!
+                    </p>
+
+                    <!-- Bento Grid for Skills & Info -->
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <!-- Bento Item 1: Position -->
+                        <div class="bg-white/90 backdrop-blur p-5 rounded-2xl border border-secondary/50 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-secondary/30 text-primary flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-graduation-cap text-lg"></i>
+                            </div>
+                            <h3 class="text-xs text-gray-500 font-medium uppercase tracking-wider">ระดับชั้น</h3>
+                            <p class="text-lg font-bold text-primary mt-1">มัธยมศึกษาปีที่ 5</p>
+                        </div>
+
+                        <!-- Bento Item 2: Future Goal -->
+                        <div class="bg-white/90 backdrop-blur p-5 rounded-2xl border border-accentPink/50 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-accentPink/40 text-primary flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-bullseye text-lg"></i>
+                            </div>
+                            <h3 class="text-xs text-gray-500 font-medium uppercase tracking-wider">เป้าหมายอนาคต</h3>
+                            <p class="text-lg font-bold text-primary mt-1">ชีวิตสบาย 🌿</p>
+                        </div>
+
+                        <!-- Bento Item 3: Skills -->
+                        <div class="bg-white/90 backdrop-blur p-5 rounded-2xl border border-primary/20 shadow-sm hover:shadow-md transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-3">
+                                <i class="fa-solid fa-bolt text-lg"></i>
+                            </div>
+                            <h3 class="text-xs text-gray-500 font-medium uppercase tracking-wider">ทักษะพิเศษ</h3>
+                            <p class="text-lg font-bold text-primary mt-1">เทควันโด 🥋</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Profile Image & Vibe Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative background shapes -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-secondary rounded-full filter blur-2xl opacity-60 animate-pulse"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-accentPink rounded-full filter blur-2xl opacity-60"></div>
+                        
+                        <!-- Profile Card -->
+                        <div class="relative bg-white p-6 rounded-3xl card-shadow border border-white/80 overflow-hidden text-center group">
+                            <div class="relative w-48 h-48 mx-auto rounded-2xl overflow-hidden shadow-inner mb-6 bg-gray-100 border-4 border-secondary/40">
+                                <img src="https://drive.google.com/uc?export=view&id=1tCyEkMRzCA6gzsVVGRw21rE6QNxBFhjJ" 
+                                     alt="บัว บงกชชมพู" 
+                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                     onerror="this.src='https://placehold.co/400x400/10288C/ffffff?text=Bua+Profile'">
+                            </div>
+                            
+                            <h2 class="text-2xl font-bold text-primary">บงกชชมพู โสภะ (บัว)</h2>
+                            <p class="text-sm text-gray-500 mt-1">Game Developer & Student</p>
+                            
+                            <div class="mt-6 flex flex-wrap justify-center gap-2">
+                                <span class="px-3 py-1 bg-bgCustom text-primary text-xs font-semibold rounded-full border border-secondary">#สีฟ้า สีชมพู สีเขียว</span>
+                                <span class="px-3 py-1 bg-accentPink/30 text-primary text-xs font-semibold rounded-full">#สนุกสนาน</span>
+                                <span class="px-3 py-1 bg-secondary/30 text-primary text-xs font-semibold rounded-full">#สร้างสรรค์</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- My Games Section (Featured Card + Card Grid) -->
+        <section id="games" class="py-16 bg-white/60 backdrop-blur-sm border-y border-secondary/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="px-4 py-1.5 rounded-full bg-secondary text-primary font-bold text-xs uppercase tracking-widest shadow-sm">My Creations</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primary mt-3">ผลงานเกมของฉัน</h2>
+                    <p class="text-gray-600 mt-2">รวมเกมที่สร้างขึ้นจากการเรียนในช่วงเช้า สนุก ได้ความรู้ และเล่นได้จริง!</p>
+                </div>
+
+                <!-- Games Container -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Game 1: Featured Card -->
+                    <div class="bg-white rounded-3xl card-shadow border border-secondary/40 overflow-hidden flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div>
+                            <!-- Thumbnail with Category Badge -->
+                            <div class="relative h-52 bg-gradient-to-br from-primary to-emerald-800 overflow-hidden flex items-center justify-center text-white p-6">
+                                <div class="absolute inset-0 bg-black/10"></div>
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-secondary text-primary font-bold text-xs rounded-full shadow">Educational Game</span>
+                                </div>
+                                <div class="absolute top-4 right-4 text-white/80 text-xs font-semibold bg-black/20 px-2.5 py-1 rounded-lg">
+                                    ปี 2569
+                                </div>
+                                <div class="text-center relative z-10 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-seedling text-5xl text-secondary mb-2"></i>
+                                    <h3 class="text-2xl font-bold">ทำฟาร์มกันจ้า</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs text-gray-500 font-medium">
+                                    <span>สร้างโดย: บัว</span>
+                                    <span class="text-primary font-semibold">เกมยอดฮิต ✨</span>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    ปลูกผัก ตอบคำถาม สนุกสนานเพลิดเพลิน ได้รับความรู้รอบตัวไปพร้อมกับการทำฟาร์มจำลอง
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <a href="https://share.gemini.google/11Nagp180HUF" target="_blank" 
+                               class="w-full py-3 px-4 rounded-xl bg-primary text-white font-semibold text-center shadow-md shadow-primary/20 hover:bg-primary/90 flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-play text-secondary"></i>
+                                <span>Play Game</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: Card Grid -->
+                    <div class="bg-white rounded-3xl card-shadow border border-accentPink/50 overflow-hidden flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div>
+                            <!-- Thumbnail -->
+                            <div class="relative h-52 bg-gradient-to-br from-accentPink to-pink-500 overflow-hidden flex items-center justify-center text-primary p-6">
+                                <div class="absolute inset-0 bg-black/5"></div>
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-white text-primary font-bold text-xs rounded-full shadow">Educational Game</span>
+                                </div>
+                                <div class="absolute top-4 right-4 text-primary text-xs font-semibold bg-white/60 px-2.5 py-1 rounded-lg">
+                                    ปี 2569
+                                </div>
+                                <div class="text-center relative z-10 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-cake-candles text-5xl text-white mb-2 drop-shadow"></i>
+                                    <h3 class="text-2xl font-bold text-white drop-shadow">pink flower sweet cafe</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs text-gray-500 font-medium">
+                                    <span>สร้างโดย: บัว</span>
+                                    <span class="text-pink-600 font-semibold">คาเฟ่สุดหวาน 🍰</span>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    จำลองการทำอาหาร เสิร์ฟความสุขและขนมหวานแสนอร่อยในคาเฟ่ดอกไม้สีชมพูสุดน่ารัก
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <a href="https://share.gemini.google/OcW0R0hi4Yqy" target="_blank" 
+                               class="w-full py-3 px-4 rounded-xl bg-primary text-white font-semibold text-center shadow-md shadow-primary/20 hover:bg-primary/90 flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-play text-secondary"></i>
+                                <span>Play Now</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Game 3: Card Grid -->
+                    <div class="bg-white rounded-3xl card-shadow border border-primary/20 overflow-hidden flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
+                        <div>
+                            <!-- Thumbnail -->
+                            <div class="relative h-52 bg-gradient-to-br from-blue-400 to-primary overflow-hidden flex items-center justify-center text-white p-6">
+                                <div class="absolute inset-0 bg-black/10"></div>
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-secondary text-primary font-bold text-xs rounded-full shadow">Educational Game</span>
+                                </div>
+                                <div class="absolute top-4 right-4 text-white/80 text-xs font-semibold bg-black/20 px-2.5 py-1 rounded-lg">
+                                    ปี 2569
+                                </div>
+                                <div class="text-center relative z-10 group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-face-laugh-beam text-5xl text-secondary mb-2"></i>
+                                    <h3 class="text-2xl font-bold">ฟ้าใสกินจุ</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs text-gray-500 font-medium">
+                                    <span>สร้างโดย: บัว</span>
+                                    <span class="text-blue-600 font-semibold">จับคู่คำศัพท์ 📚</span>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    เกมทายและจับคู่คำศัพท์แสนสนุก ช่วยพัฒนาทักษะภาษาไทยและความไวไปพร้อมกัน
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <a href="https://share.gemini.google/g7fu2t0XBhEs" target="_blank" 
+                               class="w-full py-3 px-4 rounded-xl bg-primary text-white font-semibold text-center shadow-md shadow-primary/20 hover:bg-primary/90 flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-play text-secondary"></i>
+                                <span>View Game</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Multi-column Footer) -->
+    <footer id="contact" class="bg-primary text-white pt-16 pb-12 border-t-4 border-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                
+                <!-- Column 1: Brand / Creator Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg">
+                            พ
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">Student Portfolio</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        เว็บไซต์พอร์ตโฟลิโอนี้จัดทำขึ้นเพื่อนำเสนอผลงานเกมสร้างสรรค์โดยนักเรียนชั้น ม.5 จากการเรียนรู้ในช่วงเช้า
+                    </p>
+                </div>
+
+                <!-- Column 2: Creator Details -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-secondary">ข้อมูลผู้สร้าง</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-user text-secondary w-5"></i>
+                            <span>ชื่อ: บงกชชมพู โสภะ (บัว)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-school text-secondary w-5"></i>
+                            <span>ระดับชั้น: มัธยมศึกษาปีที่ 5</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-heart text-secondary w-5"></i>
+                            <span>เป้าหมาย: ชีวิตสบาย</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-secondary">ลิงก์ด่วน</h3>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li><a href="#about" class="hover:text-secondary transition-colors">เกี่ยวกับฉัน (About Me)</a></li>
+                        <li><a href="#games" class="hover:text-secondary transition-colors">ผลงานเกม (My Games)</a></li>
+                        <li><a href="#contact" class="hover:text-secondary transition-colors">ข้อมูลติดต่อ (Contact)</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Vibe Message -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-300 gap-4">
+                <p>&copy; 2569 บงกชชมพู โสภะ. All rights reserved.</p>
+                <p class="font-semibold text-secondary flex items-center gap-2">
+                    <i class="fa-solid fa-house-chimney"></i> บ้านต้องการฉัน
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking menu links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
